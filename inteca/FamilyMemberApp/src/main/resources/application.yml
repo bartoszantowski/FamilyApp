@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: FamilyMemberApp
+
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://database:3307/FamilyMemberDB
+    username: intecaU
+    password: intecaP
+
+  jpa:
+    show-sql: true
+
+  flyway:
+    url: jdbc:mysql://database:3307
+    user: intecaU
+    password: intecaP
+    enabled: true
+    validate-on-migrate: true
+    createSchemas: true
+    defaultSchema: FamilyMemberDB
+    baselineOnMigrate: true
+

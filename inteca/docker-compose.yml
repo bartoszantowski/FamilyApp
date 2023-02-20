@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+    family-app:
+      build: ./FamilyApp
+      ports:
+        - "8080:8080"
+      depends_on:
+        - family-member-app
+
+    database:
+      platform: linux/x86_64
+      container_name: database
+      image: mysql:8.0.32
+      command: --lower_case_table_names=2
+      environment:
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_PASSWORD: intecaP
+        MYSQL_USER: intecaU
+      ports:
+        - "3307:3306"
+      restart: always
+
+    family-member-app:
+      build: ./FamilyMemberApp
+      ports:
+        - "8081:8081"
+      depends_on:
+        - database
+

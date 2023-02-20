@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "369307b0-accb-4f98-be43-762d31e02175",
+		"name": "POSTMAN2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12500524"
+	},
+	"item": [
+		{
+			"name": "getFamily()",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://family-app:8080/v1/familyMembers/5",
+					"protocol": "http",
+					"host": [
+						"family-app"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"familyMembers",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createFamily()",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"familyName\": \"TestName\",\n    \"nrOfAdults\": 1,\n    \"nrOfChildren\": 0,\n    \"nrOfInfants\": 1,\n    \"familyMembers\": [\n        {\n            \"name\": \"Adult\",\n            \"age\": 44\n        },\n        {\n            \"name\": \"Infant\",\n            \"age\": 2\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://family-app:8080/v1/family",
+					"protocol": "http",
+					"host": [
+						"family-app"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"family"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
